@@ -231,6 +231,10 @@ footer{
 }
 
 @media (max-width: 600px) {
+    body{
+        overflow-x: hidden;
+    }
+
     #shadow{
         display: none;
         width: 100vw;
@@ -241,6 +245,7 @@ footer{
     }
 
     header{
+        width: 100vw;
         nav{
             display: none;
             flex-direction: column;
@@ -278,7 +283,7 @@ footer{
     }
     #story{
         flex-direction: column;
-        width:375px;
+        width:100vw;
         padding: 0;
         margin: auto;
         margin-bottom: 30px;
