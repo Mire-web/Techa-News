@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap');
+
+@font-face {
+    font-family: inter;
+    src: url('./assets/fonts/Inter-VariableFont_slnt\,wght.ttf');
+}
+
+
+$primary-font-style: inter;
+$soft-orange: hsl(35, 77%, 62%);
+$soft-red:  hsl(5, 85%, 63%);
+$Off-white: hsl(36, 100%, 99%);
+$Grayish-blue: hsl(233, 8%, 79%);
+$Dark-grayish-blue: hsl(236, 13%, 42%);
+$Very-dark-blue: hsl(240, 100%, 5%);
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: inter;
+}
+
+#shadow{
+    display: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    nav{
+        margin: 30px;
+        margin-right: 6%;
+
+        img{
+            display: none;
+        }
+
+        a{
+            margin-left: 15px;
+            text-decoration: none;
+            color: $Dark-grayish-blue;
+            font-weight: 500;
+        }
+        a:hover{
+            color: $soft-red;
+        }
+    }
+    
+    #logo{
+        margin: 20px;
+        margin-left: 6%;
+        font-family: 'Playfair Display', serif;
+    }
+    #burger-menu, #burger-close{
+        display: none;
+    }
+}
+
+#story{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 50px;
+    padding-bottom: 0;
+    padding-top: 0;
+    #main-story{
+        display: grid;
+        width: 800px;
+        grid-template-columns: repeat(2, 400px);
+        grid-template-rows: repeat(2, auto);
+        #ms-img{
+            background: url("./assets/images/image-web-3-desktop.jpg");
+            width: 800px;
+            height: 400px;
+            grid-column: 1 / span 2;
+        }
+        h1{
+            width: 300px;
+            font-size: 55px;
+            font-weight: 900;
+            line-height: 3.5pc;
+            color: $Very-dark-blue;
+            grid-row-start: 2;
+        }
+        #detail{
+            margin-top: 0px;
+            width: 400px;
+            color: $Dark-grayish-blue;
+            grid-column-start: 2;
+            grid-row-start: 2;
+
+            #detail-text{
+                line-height: 1.5pc;
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            button{
+                margin-top:30px;
+                width: 150px;
+                height: 50px;
+                background-color: $soft-red;
+                letter-spacing: 4px;
+                color: $Off-white;
+                font-weight: 700;
+                padding: 4px;
+                border: none;
+                cursor: pointer;
+            }
+            
+            button:hover{
+                background-color: $Very-dark-blue;
+            }
+        }
+    }
+    #more-story{
+        width: 350px;
+        background-color: $Very-dark-blue;
+        color: $Off-white;
+
+        #title{
+            color: $soft-orange;
+            margin-left: 15px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            font-size: 45px;
+        }
+
+        .new-story{
+            margin-top: 20px;
+            margin-left: 15px;
+            margin-right: 15px;
+            padding-bottom: 35px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid $Dark-grayish-blue;
+
+            .ns-paragraph{
+                color: $Grayish-blue;
+                margin-top: 10px;
+                font-size: 16px;
+            }
+
+            .new-title{
+                font-size: 20px;
+                cursor: pointer;
+            }
+
+            .new-title:hover{
+                color: $soft-orange;
+            }
+        }
+        .new-story:last-child{
+            border-bottom: none;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+#attraction{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .attract{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 350px;
+        margin-top: 70px;
+        margin-right: 60px;
+
+        img{
+            width: 100px;
+            margin-right: 20px;
+        }
+
+        .info{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            h2{
+                margin-bottom: 10px;
+                font-size: 30px;
+                color: $Grayish-blue;
+            }
+
+            h3{
+                margin-bottom: 10px;
+                font-size: 18px;
+                font-weight: 900;
+                color: $Very-dark-blue;
+                cursor: pointer;
+            }
+
+            h3:hover{
+                color: $soft-red;
+            }
+
+            p{
+                line-height: 1.5pc;
+                font-size: 16px;
+                font-weight: 500;
+                color: $Dark-grayish-blue;
+            }
+        }
+    }
+    
+    .attract:last-child{
+        margin-right: 0;
+    }
+}
+
+p{
+    font-size: 15px;
+}
+
+footer{
+    margin-top: 50px;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 600px) {
+    #shadow{
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        background: black;
+        position: fixed;
+        opacity: 0.5;
+    }
+
+    header{
+        nav{
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            right: -5%;
+            top: -4%;
+            height: 100vh;
+            padding-top: 100px;
+            background: white;
+            width: 70vw;
+            animation: slideOpen 0.5s linear;
+
+            img{
+                position: absolute;
+                top: 3%;
+                right: 5%;
+                display: block;
+                width: 30px;
+                align-self: flex-end;
+                animation: showbtn 0.5s linear;
+            }
+
+            a{
+                margin-top: 20px;
+                font-size: 20px;
+                font-weight: 600;
+                margin-left: 30px;
+            }
+        }
+        #burger-menu{
+            display:block;
+            margin: 20px;
+            height: 15px;
+        }
+    }
+    #story{
+        flex-direction: column;
+        width:375px;
+        padding: 0;
+        margin: auto;
+        margin-bottom: 30px;
+
+        #main-story{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            #detail{
+                width: 100%;
+            }
+            
+            #ms-img{
+                background: url("./assets/images/image-web-3-mobile.jpg");
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            h1{
+                margin-bottom: 20px;
+            }
+            
+            button{
+                margin-bottom: 60px;
+            }
+            
+        }
+
+        #more-story{
+            width: 100%;
+            margin-bottom: 50px;
+        }
+    }
+
+    #attraction{
+        flex-direction: column;
+        width: 375px;
+        margin: auto;
+
+        .attract{
+            width: 100%;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+    }
+
+    @keyframes slideOpen {
+        from{
+            width: 0;
+        }
+        to{
+            width: 70vw;
+        }
+    }
+
+    @keyframes showbtn {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 0;
+        }
+    }
+}
