@@ -235,10 +235,6 @@ footer{
         overflow-x: hidden;
     }
 
-    #logo{
-        margin-left: 10px;
-    }
-
     #shadow{
         display: none;
         width: 100vw;
@@ -261,6 +257,10 @@ footer{
             background: white;
             width: 70vw;
             animation: slideOpen 0.5s linear;
+
+            #logo{
+                margin-left: 10px;
+            }
 
             img{
                 position: absolute;
